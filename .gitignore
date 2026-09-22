@@ -1,0 +1,17 @@
+# 原始 ChatGPT 导出与中间提取内容——包含未匿名化的真实信息，永不上传
+raw/
+extracted/
+
+# 内部工作文档（审查报告、发布清单等）
+output/
+
+# 系统文件
+.DS_Store
+**/.DS_Store
+
+# 本地工具配置（Claude Code），非项目内容
+.claude/
+
+# Python 运行产物（md-to-pdf 脚本）
+__pycache__/
+*.pyc

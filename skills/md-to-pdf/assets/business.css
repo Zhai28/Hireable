@@ -1,0 +1,189 @@
+/* ─────────────────────────────────────────────
+   Business Report Theme  ·  A4  ·  中英文混排
+   同时兼容 WeasyPrint 与 Chromium 两种渲染引擎
+   ───────────────────────────────────────────── */
+
+:root {
+  --ink:        #1f2933;
+  --ink-soft:   #52606d;
+  --muted:      #8c99a6;
+  --primary:    #16456b;   /* 深蓝主色 */
+  --primary-lt: #2e86c1;
+  --accent:     #1e8449;   /* 二级标题绿 */
+  --line:       #dfe4ea;
+  --band:       #f4f7fa;
+  --good:       #1e8449;
+  --warn:       #b7791f;
+  --risk:       #b03a2e;
+}
+
+@page {
+  size: A4;
+  margin: 22mm 18mm 20mm 18mm;
+  @top-center {
+    content: "__HEADER_TEXT__";
+    font-family: "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 8pt; color: #8c99a6;
+    border-bottom: .5pt solid #e6eaee; padding-bottom: 2.5mm;
+  }
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans CJK SC", "PingFang SC", sans-serif;
+    font-size: 8.5pt; color: #8c99a6; padding-top: 2mm;
+  }
+}
+@page :first { @top-center { content: none; } @bottom-center { content: none; } }
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  font-family: "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC",
+               "Microsoft YaHei", "WenQuanYi Zen Hei", Helvetica, Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0;
+  word-wrap: break-word;
+}
+
+/* ── 封面 ── */
+.cover { page-break-after: always; break-after: page; height: 232mm; position: relative; }
+.cover-rule { width: 46mm; height: 4pt; background: var(--primary); margin-bottom: 9mm; }
+.cover-kicker {
+  font-size: 9.5pt; letter-spacing: .18em; color: var(--primary-lt);
+  text-transform: uppercase; margin-bottom: 5mm;
+}
+.cover h1.cover-title {
+  font-size: 27pt; line-height: 1.35; color: var(--primary);
+  font-weight: 700; margin: 0 0 6mm 0; padding: 0; border: none;
+  page-break-before: auto; break-before: auto; letter-spacing: .02em;
+}
+.cover-sub { font-size: 12.5pt; color: var(--ink-soft); line-height: 1.7; margin-bottom: 12mm; max-width: 130mm; }
+.cover-meta { position: absolute; bottom: 0; left: 0; font-size: 9.5pt; color: var(--muted); line-height: 2; }
+.cover-meta .k { display: inline-block; width: 22mm; color: var(--primary); }
+.cover-meta-rule { border: none; border-top: .8pt solid var(--line); margin-bottom: 4mm; width: 100%; }
+
+/* ── 目录 ── */
+.toc { page-break-after: always; break-after: page; }
+.toc h2 { border: none; color: var(--primary); margin-top: 0; }
+.toc ul { list-style: none; padding-left: 0; }
+.toc ul ul { padding-left: 6mm; }
+.toc li { margin: 1.2mm 0; font-size: 10pt; }
+.toc a { color: var(--ink); text-decoration: none; }
+
+/* ── 标题层级 ── */
+h1 {
+  font-size: 17pt; color: var(--primary); font-weight: 700;
+  margin: 0 0 6mm 0; padding-bottom: 3mm;
+  border-bottom: 2pt solid var(--primary);
+  page-break-before: always; break-before: page;
+  page-break-after: avoid; break-after: avoid;
+}
+h1.first, .cover + h1 { page-break-before: avoid; break-before: auto; }
+h2 {
+  font-size: 13.5pt; color: var(--primary); font-weight: 700;
+  margin: 9mm 0 4mm; padding-left: 3.5mm;
+  border-left: 3.5pt solid var(--accent);
+  page-break-after: avoid; break-after: avoid;
+}
+h3 {
+  font-size: 11.5pt; color: var(--accent); font-weight: 700;
+  margin: 6mm 0 2.5mm;
+  page-break-after: avoid; break-after: avoid;
+}
+h4 { font-size: 10.5pt; color: var(--ink-soft); font-weight: 700; margin: 4mm 0 2mm; }
+
+p { margin: 0 0 3.2mm; text-align: justify; }
+strong { color: var(--primary); font-weight: 700; }
+em { color: var(--ink-soft); }
+a { color: var(--primary-lt); text-decoration: none; }
+hr { border: none; border-top: .8pt solid var(--line); margin: 7mm 0; }
+
+/* ── 列表 ── */
+ul, ol { margin: 0 0 3.5mm; padding-left: 6mm; }
+li { margin-bottom: 1.6mm; text-align: justify; }
+li > ul, li > ol { margin-top: 1.6mm; }
+ul > li::marker { color: var(--primary-lt); }
+ol > li::marker { color: var(--primary-lt); font-weight: 700; }
+
+/* ── 表格 ── */
+table {
+  width: 100%; border-collapse: collapse; margin: 4mm 0 6mm;
+  font-size: 9.5pt; page-break-inside: auto;
+}
+thead { display: table-header-group; }
+tr { page-break-inside: avoid; break-inside: avoid; }
+th {
+  background: var(--primary); color: #fff; font-weight: 700;
+  text-align: left; padding: 2.4mm 2.6mm; border: .5pt solid var(--primary);
+  line-height: 1.5;
+}
+td {
+  padding: 2.2mm 2.6mm; border: .5pt solid var(--line);
+  vertical-align: top; line-height: 1.6;
+}
+tbody tr:nth-child(even) td { background: var(--band); }
+
+/* ── 引用 ── */
+blockquote {
+  margin: 4mm 0; padding: 3mm 4mm;
+  background: var(--band); border-left: 3pt solid var(--primary-lt);
+  color: var(--ink-soft); font-size: 10pt;
+  page-break-inside: avoid; break-inside: avoid;
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 代码 ── */
+code {
+  font-family: "DejaVu Sans Mono", Menlo, Consolas, monospace;
+  font-size: 9pt; background: #eef2f6; padding: .4mm 1.2mm; border-radius: 2px;
+  color: #b03a2e;
+}
+pre {
+  background: #f6f8fa; border: .5pt solid var(--line); border-radius: 3px;
+  padding: 3mm; font-size: 8.8pt; line-height: 1.55; overflow-wrap: break-word;
+  white-space: pre-wrap; page-break-inside: avoid; break-inside: avoid;
+}
+pre code { background: none; color: var(--ink); padding: 0; }
+
+/* ── 评分卡（自动识别 X/10 生成） ── */
+.score-card {
+  margin: 4.5mm 0; padding: 3.5mm 4mm;
+  border: .8pt solid var(--line); border-left: 3.5pt solid var(--primary);
+  background: var(--band); border-radius: 2px;
+  page-break-inside: avoid; break-inside: avoid;
+}
+.score-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5mm; }
+.score-label { font-size: 10.5pt; font-weight: 700; color: var(--primary); }
+.score-value { font-size: 16pt; font-weight: 700; color: var(--primary); line-height: 1; }
+.score-value .denom { font-size: 9.5pt; font-weight: 400; color: var(--muted); }
+.score-track { height: 4.2mm; background: #e3e9ef; border-radius: 2.1mm; overflow: hidden; }
+.score-fill { height: 100%; border-radius: 2.1mm; background: var(--primary-lt); }
+.score-fill.good { background: var(--good); }
+.score-fill.mid  { background: var(--warn); }
+.score-fill.low  { background: var(--risk); }
+.score-note { margin-top: 2mm; font-size: 9pt; color: var(--ink-soft); }
+
+/* ── 结论框 / 提示框 ── */
+.callout {
+  margin: 5mm 0; padding: 3.5mm 4mm 3mm;
+  border: .8pt solid var(--line); border-left: 4pt solid var(--primary-lt);
+  background: #f6f9fc; border-radius: 2px;
+  page-break-inside: avoid; break-inside: avoid;
+}
+.callout-title {
+  font-size: 9pt; font-weight: 700; letter-spacing: .08em;
+  color: var(--primary-lt); margin-bottom: 2mm; text-transform: uppercase;
+}
+.callout p:last-child, .callout ul:last-child, .callout ol:last-child { margin-bottom: 0; }
+.callout.good { border-left-color: var(--good); background: #f2f9f4; }
+.callout.good .callout-title { color: var(--good); }
+.callout.warn { border-left-color: var(--warn); background: #fdf8ef; }
+.callout.warn .callout-title { color: var(--warn); }
+.callout.risk { border-left-color: var(--risk); background: #fdf4f2; }
+.callout.risk .callout-title { color: var(--risk); }
+.callout.key  { border-left-color: var(--primary); background: var(--band); }
+.callout.key  .callout-title { color: var(--primary); }
+
+/* ── 页脚（Chromium 引擎不支持 @page margin box，用此备用） ── */
+.pdf-footer { display: none; }
