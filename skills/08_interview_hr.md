@@ -328,8 +328,8 @@ GAP 期解释（如适用）：
 目标岗位：Segment Marketing Manager — Energy Storage
 目标公司：[某跨国电力设备企业]（B2B储能系统，服务系统集成商与工商业客户）
 候选人背景：在[某跨国工业设备企业]工作7年，从产品专员到中国区产品组合负责人，
-            负责产品组合管理和GTM执行；之后有约4个月GAP期
-特殊情况：GAP 期需要解释；跨行业转入储能
+            负责产品组合管理和GTM执行；
+特殊情况：跨行业转入储能
 面试语言：中文 + 英文
 候选人卖点：B2B产品管理经验 / 中国区跨职能协作 / 已完成储能行业系统研究
 ```
@@ -368,15 +368,7 @@ GAP 期解释（如适用）：
 *English:*
 > "That role gave me a complete foundation in product portfolio management and GTM execution. But the segment has reached a mature stage — growth comes mostly from optimizing the existing base, and product and marketing have relatively limited room to move the business. I wanted to move into an industry with stronger growth, where product decisions have a more direct impact on results, so I made that shift proactively."
 
-GAP 期（4 个月）：
 
-*中文：*
-> 这段时间是我主动留出来做职业方向梳理的。在没想清楚的情况下就进入下一份工作，反而会绕更大的弯。这几个月我做了三件事：系统梳理自己的能力与方向、研究储能行业的产业链与商业模式、并调整好进入新阶段的状态。现在我对方向的判断比离开时清晰得多。
-
-*English:*
-> "That gap was a deliberate decision to take time and get clear on my direction — moving into another role before I was clear would have cost me more time in the long run. I used the period for three things: mapping my own strengths and direction, studying the energy storage value chain and its business models, and getting ready for the next stage. I came out of it with a much sharper view than when I left."
-
-> **说明：** 本例只演示「离职原因」与「GAP 期」两类。短期任职（< 6 个月）的解释逻辑见框架二 B 类，按同样的结构替换即可：说清岗位实际职责与入职描述的差距、这段时间的具体收获、以及由此明确了什么样的下一步。
 
 **4- 你为什么选择我们公司 / 这个岗位？**
 

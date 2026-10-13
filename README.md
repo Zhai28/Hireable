@@ -97,7 +97,7 @@ Claude Code 用户克隆到上面这个位置即可直接使用。claude.ai 网�
 
 上面 12 个 Skill 的产出都是 Markdown。如果你想把它变成一份**可以直接发给 HR、猎头、面试官**的 PDF——有封面页、页眉页脚、中英文混排、表格斑马纹、评分可视化条——用这个。
 
-> 📂 [`skills/md-to-pdf/`](skills/md-to-pdf/)　·　完整用法见 [`SKILL.md`](skills/md-to-pdf/SKILL.md)
+> 📂 [`skills/md-to-pdf/`](skills/md-to-pdf/)　·　完整用法见 [`SKILLPDF.md`](skills/md-to-pdf/SKILLPDF.md)
 
 **为什么需要它**：不是每个人电脑上都装了 Markdown 阅读器，但 PDF 谁都能打开。导出成 PDF 也意味着文件可以下载保存、反复查看，不必每次回到对话里翻记录。
 
